@@ -1,7 +1,7 @@
 /* global phaser */
 
 // Created by: Fares Abdelkader
-// Created on April 2022
+// Created on April 2023
 // This is the config file for the phaser3 program
 
 // scene import statements
@@ -19,7 +19,7 @@ const config = {
   width: 1920,
   height: 1080,
   physics: {
-    default: 'arcade',
+    default:'arcade',
     arcade: {
       debug: true
     }
