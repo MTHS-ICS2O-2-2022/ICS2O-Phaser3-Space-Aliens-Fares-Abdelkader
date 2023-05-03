@@ -1,9 +1,14 @@
 /* global Phaser */
 
-// Created by: Fares Abdelkader
-// Created on: April 2023
+// Copyright (c) 2023 Fares.Abdelkader
+//
+// Created by: maliksalem1
+// Created on: Apr 2023
+// This is the Title Scene
+
+/**
  * This class is the Title Scene.
- * /
+ */
 class TitleScene extends Phaser.Scene {
   /**
    * This method is the construtor.
