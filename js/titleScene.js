@@ -2,11 +2,8 @@
 
 // Created by: Fares Abdelkader
 // Created on: April 2023
-// This is the Title Scene
-
-/**
  * This class is the Title Scene.
- */
+ * /
 class TitleScene extends Phaser.Scene {
   /**
    * This method is the construtor.
@@ -16,40 +13,31 @@ class TitleScene extends Phaser.Scene {
   }
 
   /**
-   * Can be defined on your own Scenes.
-   * This method is called by the Scene Manager when the scene starts,
-   *   before preload() and create().
-   * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
+   * This method is the init.
    */
   init(data) {
-    this.cameras.main.setBackgroundColor("#ffffff")
+    this.cameras.main.setBackgroundColor("ffffff")
   }
 
   /**
-   * Can be defined on your own Scenes.
-   * Use it to load assets.
+   * This method is the preload.
    */
   preload() {
     console.log("Title Scene")
   }
 
   /**
-   * Can be defined on your own Scenes.
-   * Use it to create your game objects.
-   * @param {object} data - Any data passed via ScenePlugin.add() or ScenePlugin.start().
+   * This method is the create.
    */
   create(data) {
     // pass
   }
 
   /**
-   * Should be overridden by your own Scenes.
-   * This method is called once per game step while the scene is running.
-   *  @param {number} time - The current time.
-   *  @param {number} delta - The delta time in ms since the last frame.
+   * This method is the update.
    */
   update(time, delta) {
-    this.scene.switch("titleScene")
+    // pass
   }
 }
 
