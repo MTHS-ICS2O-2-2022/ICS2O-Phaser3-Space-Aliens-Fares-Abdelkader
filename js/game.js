@@ -1,15 +1,16 @@
 /* global phaser */
 
 // Created by: Fares Abdelkader
-// Created on April 2022
+// Created on April 2023
 // This is the config file for the phaser3 program
 
 // scene import statements
 import SplashScene from "./splashScene.js"
+import TitleScene from "./titleScene.js"
 
 // create the new scene
-const splashscene = new SplashScene()
-const titlescene = new TitleScene()
+const splashScene = new SplashScene()
+const titleScene = new TitleScene()
 
 /**
  * Start Phaser Game
@@ -19,11 +20,12 @@ const config = {
   width: 1920,
   height: 1080,
   physics: {
-    default: 'arcade',
+    default:'arcade',
     arcade: {
       debug: true
     }
   },
+
   // set background color
   backgroundColor: 0x5f6e7a,
   scale: {
@@ -34,7 +36,8 @@ const config = {
 }
 
 const game = new Phaser.Game(config)
-// console.log(game)
+//console.log(game)
+//console.log("game.js")
 
 // load scene 
 // NOTE: remeber any "key" is global and CAN NOT be reused
