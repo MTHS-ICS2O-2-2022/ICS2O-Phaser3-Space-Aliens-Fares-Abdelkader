@@ -1,13 +1,12 @@
-/* global Phaser */
+/* global phaser */
 
-// Copyright (c) 2023 Fares.Abdelkader
-//
-// Created by: Fares.Abdelkader
-// Created on: Apr 2023
+// Created by: Fares Abdelkader
+// Created on April 2023
+// This is the Phaser3 configuration file
 // This is the Game Scene
 
 /**
- * This class is the Menu Scene.
+ * This class is the Game Scene.
  */
 class GameScene extends Phaser.Scene {
   /**
@@ -15,6 +14,9 @@ class GameScene extends Phaser.Scene {
    */
   constructor() {
     super({ key: "gameScene" })
+
+    this.background = null
+    this.ship = null
   }
 
   /**
@@ -28,13 +30,21 @@ class GameScene extends Phaser.Scene {
    * This method is the preload.
    */
   preload() {
-    console.log("game Scene")
+    console.log("Game Scene")
+
+    // images
+    this.load.image('starBackground', 'assets/starBackground.png')
+    this.load.image('ship', 'assets/spaceShip.png')
   }
 
   /**
    * This method is the create.
    */
   create(data) {
+    this.background = this.add.image(0, 0, 'starBackground').setScale(2.0)
+    this.background.setOrigin(0, 0)
+
+    this.ship = this.physics.add.sprite(1920 / 2, 1080 - 100, 'ship')
     // pass
   }
 
@@ -42,6 +52,24 @@ class GameScene extends Phaser.Scene {
    * This method is the update.
    */
   update(time, delta) {
+    // called 60 times a second, hopefully!
+
+    const keyLeftObj = this.input.keyboard.addKey('LEFT')
+    const keyRightObj = this.input.keyboard.addKey('RIGHT')
+
+    if (keyLeftObj.isDown === true) {
+      this.ship.x -= 15
+      if (this.ship.x < 0) {
+        this.ship.x = 0
+      }
+    }
+
+    if (keyRightObj.isDown === true) {
+      this.ship.x += 15
+      if (this.ship.x > 1920) {
+        this.ship.x = 1920
+      }
+    }
     // pass
   }
 }
